@@ -11,7 +11,7 @@ class UserTile extends StatelessWidget{
       ? CircleAvatar(child: Icon(Icons.person))
       : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
     return ListTile(
-      leading: ,
+      leading: avatar,
     );
   }
 }
