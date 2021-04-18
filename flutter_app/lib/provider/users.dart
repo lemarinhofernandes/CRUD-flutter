@@ -28,7 +28,7 @@ class Users with ChangeNotifier {
         _items.containsKey(user.id)) {
       _items.update(
           user.id,
-          (value) => user(
+          (_) => User(
                 id: user.id,
                 name: user.name,
                 email: user.email,
@@ -45,7 +45,13 @@ class Users with ChangeNotifier {
                 avatarUrl: user.avatarUrl,
               ));
     }
-
     notifyListeners();
+  }
+
+  void remove(User user) {
+    if(user != null && user.id != null) {
+      _items.remove(user.id);
+      notifyListeners();
+    }
   }
 }
